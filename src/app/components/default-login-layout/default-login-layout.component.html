@@ -1,16 +1,36 @@
-<main>
-    <section>
-        <img src="/assets/svg/Logo-Menor.svg"/>
-        <h2></h2>
-        <button></button>
-        <div>
-            <span>or</span>
+<html lang="pt-BR">
+    
+
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <img src="/assets/svg/Logo-Menor.svg" alt="Logo da Aplicação">
         </div>
-        <button></button>
-    </section>
-    <section>
-        <h1>You should, MoveIt!</h1>
-        <h2>oLA MUNDOg</h2>
-        <img src="/assets/svg/main-iliustration.svg"/>
-    </section>
-</main>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <img src="/assets/svg/Logo-Menor.svg"/>
+            <h2>{{title}}</h2>
+            <ng-content></ng-content>
+        <div class="btn-wrapper">
+            <button class="btn-primary">{{primaryBtnText}}</button>
+            <div class="divider">
+                <div></div>
+                <span>Ou</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary">{{ secondaryBtnText}}</button>
+        </div>
+        </section>
+        <section class="main-section">
+            <img src="/assets/svg/main-iliustration.svg"/>
+        </section>
+    </main>
+</body>
+</html>
