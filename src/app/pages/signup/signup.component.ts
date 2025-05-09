@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common'; // Importe o CommonModule
+import { cpfOnlyNumbersValidator } from '../../validators';
 
 interface SignupForm {
   name: FormControl,
@@ -65,7 +66,7 @@ export class SignUpComponent {
     this.signupForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      cpf: new FormControl('', [Validators.required, cpfValido()]),
+      cpf: new FormControl('', [Validators.required, cpfOnlyNumbersValidator()]),
       tel: new FormControl('', [Validators.required, telefoneValido()]),
       nasc: new FormControl('', [Validators.required, Validators.minLength(6)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),

@@ -32,9 +32,18 @@
             inputName="cpf"
             type="text"
             label="Seu CPF"
-        >
+        >        
+     
             <img src="/assets/svg/document-icon.svg" slot="icon"/>
         </app-primary-input>
+        <div class="text-red-500 text-sm"
+     *ngIf="signupForm.get('cpf')?.hasError('cpfOnlyNumbers') && signupForm.get('cpf')?.dirty">
+  O CPF deve conter apenas números.
+</div>
+        <pre>{{ signupForm.get('cpf')?.errors | json }}</pre>
+<pre>Touched: {{ signupForm.get('cpf')?.touched }}</pre>
+<pre>Dirty: {{ signupForm.get('cpf')?.dirty }}</pre>
+    
 
         <app-primary-input
             formControlName="tel"
