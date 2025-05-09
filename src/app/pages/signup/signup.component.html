@@ -1,0 +1,76 @@
+<app-default-login-layout
+    title="Sign in and start today!"
+    primaryBtnText="Signup Now"
+    secondaryBtnText="Login Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!signupForm.valid"
+>
+    <form [formGroup]="signupForm" class="flex flex-col gap-4 px-4">
+        <app-primary-input
+            formControlName="name"
+            inputName="name"
+            type="text"
+            label="Nome Completo"
+            placeholder="John Doe"
+        >
+            <img src="/assets/svg/user-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Endereço de E-mail"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="cpf"
+            inputName="cpf"
+            type="text"
+            label="Seu CPF"
+        >
+            <img src="/assets/svg/document-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="tel"
+            inputName="tel"
+            type="tel"
+            label="Telefone"
+        >
+            <img src="/assets/svg/phone-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="nasc"
+            inputName="nasc"
+            type="date"
+            label="Data de nasc"
+        >
+            <img src="/assets/svg/calendar-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Senha"
+        >
+            <img src="/assets/svg/password-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="passwordConfirm"
+            inputName="passwordConfirm"
+            type="password"
+            label="Confirm your Password"
+        >
+            <img src="/assets/svg/password-icon.svg" slot="icon"/>
+        </app-primary-input>
+
+    </form>
+</app-default-login-layout>

@@ -1,30 +1,32 @@
 <app-default-login-layout
-title="Faça login"
-primaryBtnText = "Entrar"
-secondaryBtnText = "Cadastrar"
-(submit)="submit()"
-(navigate)="navigate()"
-[disablePrimaryBtn]="!loginForm.valid">
-    <form [formGroup]="loginForm">
-        <app-primary-input
-        formControlName="email"
-        inputName="email"
-        type="email"
-        label="E-mail"
-        placeholder="johndoe@gmail.com">
-        <img src="/assets/svg/email-icon.svg">
-    </app-primary-input>
-
+  title="Faça login"
+  primaryBtnText="Entrar"
+  secondaryBtnText="Cadastrar"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!loginForm.valid"
+>
+  <div class="logo-content">
+    <img src="/assets/svg/Logo-Menor.svg" alt="Logo de Login" />
+  </div>
+  <form [formGroup]="loginForm">
     <app-primary-input
-    formControlName="password"    
-    formName="password"
-        type="password"
-        label="Your password"
-        >
-        <img src="/assets/svg/password-icon.svg">
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="E-mail"
+      placeholder="johndoe@gmail.com"
+    >
+      <img src="/assets/svg/email-icon.svg" />
+    </app-primary-input>
+    <app-primary-input
+      formControlName="password"
+      formName="password"
+      type="password"
+      label="Your password"
+    >
+      <img src="/assets/svg/password-icon.svg" />
     </app-primary-input>
     <span>Esqueceu a senha?</span>
-    
-    </form>
-
+  </form>
 </app-default-login-layout>
