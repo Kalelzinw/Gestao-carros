@@ -13,10 +13,16 @@
     </header>
     <main>
       <section class="form-section">
-      <h2>{{title}}</h2>
-      <ng-content select=".form-image"></ng-content>
-      <ng-content></ng-content>
+        <!-- Seletor para imagem do formulário -->
+        <ng-content select=".logo-content"></ng-content> 
+
+        <!-- Título -->
+        <h2>{{title}}</h2>
+        <ng-content select=".foto-content"></ng-content> 
+        <!-- Conteúdo do formulário (como inputs, etc.) -->
+        <ng-content select=".inputs"></ng-content>
         
+        <!-- Botões de ação -->
         <div class="btn-wrapper">
           <button
             class="btn-primary"
@@ -35,6 +41,8 @@
           </button>
         </div>
       </section>
+
+      <!-- Seção com imagem ilustrativa -->
       <section class="main-section">
         <img src="/assets/svg/main-iliustration.svg" />
       </section>
