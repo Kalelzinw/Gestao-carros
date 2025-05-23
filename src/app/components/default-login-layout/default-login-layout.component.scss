@@ -69,8 +69,12 @@ section {
   padding: 100px 32px;
   min-height: 100vh;
 
+   
+  display: flex;
+  flex-direction: column; /* Garantir que o conteúdo fique na vertical */
   img {
     margin-top: 30px;
+    order: 1; /* A imagem será a primeira */
   }
 
   h2 {
