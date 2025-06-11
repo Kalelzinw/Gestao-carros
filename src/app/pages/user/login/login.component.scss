@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@import "../../../../styles/variables.scss";
 form {
     width: 100%;
     display: flex;
@@ -13,11 +13,4 @@ form {
         text-align: end;
 
     }
-    .error-message {
-  color: red;
-  font-size: 0.8em;
-  margin-top: 5px;
-  display: block; /* Para ocupar a largura total abaixo do input */
-  text-align: left; /* Alinhe o texto à esquerda */
-}
 }

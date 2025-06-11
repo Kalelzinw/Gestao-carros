@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { LoginService } from './login.service';
+import { LoginService } from './user.serivce';
 
 describe('LoginService', () => {
   let service: LoginService;
 
 beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], // 👈 Necessário para simular HttpClient
+      imports: [HttpClientTestingModule], 
       providers: [LoginService]
     });
     service = TestBed.inject(LoginService);

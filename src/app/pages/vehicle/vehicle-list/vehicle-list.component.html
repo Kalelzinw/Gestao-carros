@@ -1,0 +1,10 @@
+
+  <h2>Meus Veículos</h2>
+  <button (click)="navigateToCreate()">Adicionar Novo Veículo</button>
+  <div *ngIf="vehicles.length === 0">
+    <p>Nenhum veículo cadastrado.</p>
+  </div>
+  <div *ngFor="let vehicle of vehicles" class="vehicle-item">
+    <p>{{ vehicle.marca }} - {{ vehicle.modelo }} ({{ vehicle.placa }})</p>
+    <button (click)="navigateToDetail(vehicle.id)">Ver Detalhes / Editar</button>
+  </div>

@@ -1,51 +1,40 @@
-<html lang="pt-BR">
-  <body>
-    <header class="app-header">
-      <div class="logo">
-        <img src="/assets/svg/Logo-Menor.svg" alt="Logo da Aplicação" />
+<header class="app-header">
+  <div class="logo">
+    <img src="/assets/svg/Logo-Menor.svg" alt="Logo da Aplicação" />
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/login">Início</a></li> <li><a routerLink="/signup">Cadastro</a></li> </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="form-section">
+    <ng-content select=".logo-content"></ng-content>
+    <h2>{{title}}</h2>
+    <ng-content select=".foto-content"></ng-content>
+    <ng-content select=".inputs"></ng-content>
+
+    <div class="btn-wrapper">
+      <button
+        class="btn-primary"
+        (click)="submit()"
+        [disabled]="disablePrimaryBtn"
+      >
+        {{primaryBtnText}}
+      </button>
+      <div class="divider">
+        <div></div>
+        <span>Ou</span>
+        <div></div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Buscar</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="form-section">
-        <!-- Seletor para imagem do formulário -->
-        <ng-content select=".logo-content"></ng-content> 
+      <button class="btn-secondary" (click)="navigate()">
+        {{ secondaryBtnText}}
+      </button>
+    </div>
+  </section>
 
-        <!-- Título -->
-        <h2>{{title}}</h2>
-        <ng-content select=".foto-content"></ng-content> 
-        <!-- Conteúdo do formulário (como inputs, etc.) -->
-        <ng-content select=".inputs"></ng-content>
-        
-        <!-- Botões de ação -->
-        <div class="btn-wrapper">
-          <button
-            class="btn-primary"
-            (click)="submit()"
-            [disabled]="disablePrimaryBtn"
-          >
-            {{primaryBtnText}}
-          </button>
-          <div class="divider">
-            <div></div>
-            <span>Ou</span>
-            <div></div>
-          </div>
-          <button class="btn-secondary" (click)="navigate()">
-            {{ secondaryBtnText}}
-          </button>
-        </div>
-      </section>
-
-      <!-- Seção com imagem ilustrativa -->
-      <section class="main-section">
-        <img src="/assets/svg/main-iliustration.svg" />
-      </section>
-    </main>
-  </body>
-</html>
+  <section class="main-section">
+    <img src="/assets/svg/main-iliustration.svg" />
+  </section>
+</main>

@@ -23,11 +23,15 @@ export type InputTypes = 'text' | 'email' | 'password' | 'date' | 'tel';
 })
 export class PrimaryInputComponent implements ControlValueAccessor {
   @Input() type: InputTypes = 'text';
+  
   @Input() placeholder: string = '';
   @Input() label: string = '';
   @Input() inputName: string = '';
   @Input() mask: string = '';
    customPatterns = { '0': { pattern: /\d/ } };
+   get inputId(): string {
+  return this.inputName || 'input-' + this.type;
+}
 
   value: string = '';
   onChange: any = () => {};
@@ -49,6 +53,7 @@ export class PrimaryInputComponent implements ControlValueAccessor {
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
+  
 
   setDisabledState(isDisabled: boolean): void {
     // optional: lógica para desabilitar input

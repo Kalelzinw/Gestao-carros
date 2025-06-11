@@ -28,6 +28,17 @@ export function cpfValidator(): ValidatorFn {
     return null;
   };
 }
+export function telefoneValido(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const valor = control.value;
+    const regexTelefone = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+    if (valor && !regexTelefone.test(valor)) {
+      return { telefoneInvalido: { value: control.value } };
+    }
+    return null;
+  };
+}
+
 
 export function passwordValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {

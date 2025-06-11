@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { DefaultLoginLayoutComponent } from '../../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { LoginService } from '../../../services/user.serivce';
 import { ToastrService } from 'ngx-toastr';
 
 interface LoginForm {
@@ -41,9 +41,12 @@ export class LoginComponent {
 
   submit(){
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success("Login feito com sucesso!"),
+      next: () => { // <--- AQUI! Adicione chaves para criar um bloco de função
+        this.toastService.success("Login feito com sucesso!");
+        this.router.navigate(['/app/home']); // <--- Adicione esta linha para redirecionar
+      },
       error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
-    })
+    });
   }
 
   navigate(){
